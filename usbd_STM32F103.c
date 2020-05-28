@@ -109,10 +109,10 @@ void USBD_Init (void) {
   GPIOD->CRL |=  0x00000700;            /* PD2 GP output open-drain, 50 MHz   */
 #endif
 	
-	// 打开GPIOB时钟
+	// 鎵撳紑GPIOB鏃堕挓
   RCC->APB2ENR |= (1 << 3); 
 	
-	// PB8, 输出模式，初始输出高电平
+	// PB8, 杈撳嚭妯″紡锛屽垵濮嬭緭鍑洪珮鐢靛钩
   GPIOB->CRH   &= ~(0xF << 0);
   GPIOB->CRH   |=  (0x1 << 0);
 	GPIOB->BSRR = (1 << 8);
